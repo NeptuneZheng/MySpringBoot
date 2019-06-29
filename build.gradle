@@ -20,7 +20,7 @@ dependencies {
 	implementation 'org.codehaus.groovy:groovy'
 
 	// Use MySQL Connector-J
-	compile 'mysql:mysql-connector-java'
+	compile 'mysql:mysql-connector-java:8.0.16'
 	//auto prompt for yml
 	compile 'org.springframework.boot:spring-boot-configuration-processor:2.1.5.RELEASE'
 	

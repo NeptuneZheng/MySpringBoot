@@ -10,8 +10,8 @@ spring:
   #update Hibernate会改变数据库的结构根据我们的java实体。
   #create 可创建数据库，但不会删除它。
   #create-drop 创建数据库，每次断开连接时自动删除。
-
+  #https://blog.csdn.net/zzq900503/article/details/81070441
   datasource:
     url: jdbc:mysql://192.168.117.128:3306/my_spring_boot
-    name: 'root'
-    password: '7654321'
+    username: 'springuser'   #it should be username not name
+    password: 'Password1'

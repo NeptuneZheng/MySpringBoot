@@ -1,14 +1,10 @@
 package cn.zheng.neptune.MySpringBoot.vo
 
+import com.fasterxml.jackson.annotation.JsonFormat
 import org.springframework.format.annotation.DateTimeFormat
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.PrimaryKeyJoinColumn
-import javax.persistence.Table
-
+import javax.persistence.*
+import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "LegalUser")
@@ -18,12 +14,16 @@ class LegalUser {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	long id
 
+	@NotNull
 	String name
+
+	@NotNull
 	String password
 	String Email
 
 	@DateTimeFormat(style = "yyyy-MM-dd HH:mm:SS",iso = DateTimeFormat.ISO.DATE_TIME)
-	Date updateTS
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+	Date updateTS = new Date()
 
 	LegalUser() {
 	}

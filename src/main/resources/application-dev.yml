@@ -2,9 +2,12 @@ server:
   port: 8090
 
 spring:
+  profiles:
+    include:
+      - preson
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
   #spring.jpa.hibernate.ddl-auto参数有以下配置:none, update, create, create-drop,含义如下:
   #none 这个是默认参数，不改版数据库结构。
   #update Hibernate会改变数据库的结构根据我们的java实体。
@@ -15,3 +18,4 @@ spring:
     url: jdbc:mysql://192.168.117.128:3306/my_spring_boot
     username: 'springuser'   #it should be username not name
     password: 'Password1'
+

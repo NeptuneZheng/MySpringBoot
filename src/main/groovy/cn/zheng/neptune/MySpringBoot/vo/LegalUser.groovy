@@ -1,6 +1,7 @@
 package cn.zheng.neptune.MySpringBoot.vo
 
 import com.fasterxml.jackson.annotation.JsonFormat
+import org.springframework.context.annotation.Bean
 import org.springframework.format.annotation.DateTimeFormat
 
 import javax.persistence.*
@@ -38,6 +39,13 @@ class LegalUser {
 		this.password = password
 		Email = email
 		this.updateTS = updateTS
+	}
+
+	LegalUser(long id, String name, String password, String email, Date updateTS) {
+		this.id = id
+		this.name = name
+		this.password = password
+		Email = email
 	}
 
 	long getId() {

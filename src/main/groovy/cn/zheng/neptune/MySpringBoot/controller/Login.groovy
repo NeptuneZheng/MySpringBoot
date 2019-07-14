@@ -3,11 +3,14 @@ package cn.zheng.neptune.MySpringBoot.controller
 import cn.zheng.neptune.MySpringBoot.dao.UserDao
 import cn.zheng.neptune.MySpringBoot.vo.LegalUser
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
+
+import javax.annotation.Resource
 
 @RestController
 class Login {

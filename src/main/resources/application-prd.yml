@@ -1,2 +1,13 @@
 server:
   port: 8080
+
+
+spring:
+  autoconfigure:
+    exclude: //since mongodb not use DataSource
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/MySpringBoot
+      username: test
+      password: test123

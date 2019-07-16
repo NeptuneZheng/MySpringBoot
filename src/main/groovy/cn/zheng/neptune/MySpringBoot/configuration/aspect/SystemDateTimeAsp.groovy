@@ -21,6 +21,7 @@ class SystemDateTimeAsp {
 
 	@Before("aspPointcut()")
 	String getSystemDT(JoinPoint joinPoint){
+		println("-------------------")
 		MethodSignature signature = joinPoint.getSignature() as MethodSignature
 //		println("SystemDateTimeAsp get params: " + format)
 		String date = new SimpleDateFormat("yyyyMMdd HH:mm").format(new Date())

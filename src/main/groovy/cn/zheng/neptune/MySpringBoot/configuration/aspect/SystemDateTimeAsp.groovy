@@ -3,6 +3,7 @@ package cn.zheng.neptune.MySpringBoot.configuration.aspect
 import cn.zheng.neptune.MySpringBoot.configuration.SystemDateTime
 import org.aspectj.lang.JoinPoint
 import org.aspectj.lang.Signature
+import org.aspectj.lang.annotation.After
 import org.aspectj.lang.annotation.Aspect
 import org.aspectj.lang.annotation.Before
 import org.aspectj.lang.annotation.Pointcut
@@ -20,16 +21,22 @@ class SystemDateTimeAsp {
 	void aspPointcut(){}
 
 	@Before("aspPointcut()")
-	String getSystemDT(JoinPoint joinPoint){
+	void getSystemDT(JoinPoint joinPoint){
 		println("-------------------")
 		MethodSignature signature = joinPoint.getSignature() as MethodSignature
-//		println("SystemDateTimeAsp get params: " + format)
-		String date = new SimpleDateFormat("yyyyMMdd HH:mm").format(new Date())
 
 		Method method = signature.getMethod()
 		SystemDateTime dateTime = method.getAnnotation(SystemDateTime.class)
 		println("SystemDateTimeAsp get method: " + method)
-
-		return date
 	}
+
+	@After("aspPointcut()")
+	public void afterPointcut(JoinPoint joinPoint) {
+		MethodSignature methodSignature =  (MethodSignature) joinPoint.getSignature();
+		Method method = methodSignature.getMethod();
+		SystemDateTime annotation = method.getAnnotation(SystemDateTime.class);
+		String value = annotation.format();
+		System.out.println("结束"+value);
+	}
+
 }

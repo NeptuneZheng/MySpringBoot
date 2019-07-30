@@ -15,6 +15,7 @@ class Consumer {
 	}
 
 	Consumer(String name, String password, int age) {
+		this.id = new Random(100).nextInt()
 		this.name = name
 		this.password = password
 		this.age = age

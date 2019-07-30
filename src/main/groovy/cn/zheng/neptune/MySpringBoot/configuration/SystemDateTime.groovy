@@ -6,10 +6,10 @@ import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 import java.lang.annotation.Target
 
-@Target(value = [ElementType.FIELD, ElementType.METHOD])
+@Target(value = [ElementType.FIELD, ElementType.METHOD, ElementType.TYPE])
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @interface SystemDateTime {
 
-	String format() default "yyyy-MM-dd HH:mm:SSS"
+	String format() default ""
 }

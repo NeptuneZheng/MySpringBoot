@@ -7,6 +7,6 @@ import org.springframework.data.mongodb.repository.Query
 import org.springframework.stereotype.Repository
 
 @Repository
-@SystemDateTime(format = "yyyy")
+@SystemDateTime(format = "dd") //todo: here doesn't work, but i'd use ElementType.TYPE, need to study more
 interface ConsumerDao extends MongoRepository<Consumer,Integer> {
 }

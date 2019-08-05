@@ -1,4 +1,4 @@
-package cn.zheng.neptune.MySpringBoot.configuration
+package cn.zheng.neptune.MySpringBoot.configuration.annotation
 
 import java.lang.annotation.Documented
 import java.lang.annotation.ElementType
@@ -6,10 +6,10 @@ import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 import java.lang.annotation.Target
 
-@Target(value = [ElementType.FIELD, ElementType.METHOD, ElementType.TYPE])
+@Target([ElementType.METHOD, ElementType.FIELD])
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@interface SystemDateTime {
-
-	String format() default ""
+@interface AutoLogFilter {
+	String level() default "info"
+	String access() default "User"
 }

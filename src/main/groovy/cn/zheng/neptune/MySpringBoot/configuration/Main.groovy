@@ -1,9 +1,8 @@
 package cn.zheng.neptune.MySpringBoot.configuration
 
-import org.springframework.stereotype.Component
+import cn.zheng.neptune.MySpringBoot.configuration.annotation.SystemDateTime
 
 class Main {
-	@SystemDateTime
 	public String doSometing(){
 		println("**********")
 		return  null
